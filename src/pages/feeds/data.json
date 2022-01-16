@@ -1,0 +1,22 @@
+[
+    {
+        "id":"0",
+        "avatar":"https://picsum.photos/200/300",
+        "username":"John Doe"
+    },
+    {
+        "id":"1",
+        "avatar":"https://picsum.photos/200/300",
+        "username":"Joahn Doe"
+    },
+    {
+        "id":"2",
+        "avatar":"https://picsum.photos/200/300",
+        "username":"Maybe Doe"
+    },
+    {
+        "id":"3",
+        "avatar":"https://picsum.photos/200/300",
+        "username":"Nobody Doe"
+    }
+]

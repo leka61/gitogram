@@ -2,7 +2,7 @@
   <div class="stats">
     <div class="stats__border stats__right">
       <div class="stats__icon mr-4">
-        <icon icon-name="stars" />
+        <icon name="star" />
       </div>
       <span>Star</span>
     </div>
@@ -11,7 +11,7 @@
     </div>
     <div class="stats__border ">
       <div class="stats__icon mr-4">
-        <icon icon-name="forks" />
+        <icon name="forks" />
       </div>
       <span>Forks</span>
     </div>

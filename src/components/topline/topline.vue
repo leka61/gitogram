@@ -3,9 +3,9 @@
         <div class="x-container">
             <div class="headline">
                 <slot name="headline"/>
-
             </div>
             <div class="content" v-if="$slots.content">
+                 <slot name="stories"/>
                  <slot name="content"/>
             </div>
         </div>

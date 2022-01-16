@@ -12,6 +12,16 @@
                         <story-user-item :avatar="story.avatar" :username="story.username" @onPress="handlePress(story.id)"/>
                     </li>
                 </ul>
+                <div class="c-feed">
+                    <toggler @onToggle="toggle"/>
+                    <div class="comments" v-if="shown">
+                        <ul class="comments-list">
+                            <li class="comments-item" v-for="n in 5" :key="n">
+                                <comment text="Some text" username="User 1"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </template>
         </topline>
     </div>
@@ -20,6 +30,8 @@
 import { topline } from '../../components/topline'
 import { icon } from '../../icons'
 import { storyUserItem } from '../../components/storyUserItem'
+import { toggler } from '../../components/toggler'
+import { comment } from '../../components/comment'
 import stories from './data.json'
 
 export default {
@@ -27,19 +39,22 @@ export default {
   components: {
     topline,
     icon,
-    storyUserItem
+    storyUserItem,
+    toggler,
+    comment
   },
   data () {
     return {
-      stories
+      stories,
+      shown: false
+    }
+  },
+  methods: {
+    toggle (isOpened) {
+      this.shown = isOpened
     }
   }
 }
 </script>
+
 <style lang="scss" scoped src="./feeds.scss"></style>
-<style lang="scss" scoped>
-    .icon{
-        color:red;
-        width:50px;
-    }
-</style>

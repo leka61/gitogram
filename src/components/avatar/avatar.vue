@@ -19,6 +19,10 @@ export default {
   },
   setup(props) {
     const style = {
+      xs: {
+        width: "37px",
+        height: "37px"
+      },
       s: {
         width: "44px",
         height: "44px"

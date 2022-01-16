@@ -38,8 +38,8 @@ export default {
     }
   },
   setup() {
-    return {};
+    return {}
   }
-};
+}
 </script>
 <style src="./stats.scss" lang="scss"></style>

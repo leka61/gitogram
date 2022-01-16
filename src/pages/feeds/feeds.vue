@@ -2,10 +2,9 @@
     <div class="topline">
         <topline>
             <template #headline>
-              <div class="c-menu">
-                <menu/>
+              <div class="c-menu mb-45">
+                <header-menu></header-menu>
               </div>
-
                 <!-- <div class="icon">
                     <icon name="home"/>
                 </div> -->
@@ -42,8 +41,6 @@
             </template>
         </topline>
     </div>
-    <div class="baseline">
-    </div>
 </template>
 <script>
 import { topline } from '../../components/topline'
@@ -53,6 +50,7 @@ import { storyUserItem } from '../../components/storyUserItem'
 // import { comment } from '../../components/comment'
 import { post } from '../../components/post'
 import { card } from '../../components/card'
+import { headerMenu } from '../../components/headerMenu'
 import stories from './data.json'
 
 export default {
@@ -64,7 +62,8 @@ export default {
     // toggler,
     // comment,
     post,
-    card
+    card,
+    headerMenu
   },
   data() {
     return {

@@ -1,0 +1,15 @@
+.user{
+    display: flex;
+    align-items: center;
+    &__name{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 18px;
+    }
+    &__avatar{
+
+    }
+    &__type{
+        font-size: 12px;
+    }
+}

@@ -12,7 +12,20 @@ module.exports = {
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    quotes: [0, "double"],
+    semi: 0,
+    "space-before-function-paren": ["error", "never"],
+    "vue/max-attributes-per-line":[
+      "error",{
+        singleline:{
+          max: 4
+        },
+        multiline:{
+          max: 4
+        }
+      }
+    ]
   },
   overrides: [
     {

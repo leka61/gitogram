@@ -4,7 +4,6 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-//     margin-top: 47px;
   }
 :root {
 	--grey: #404040;
@@ -20,6 +19,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color:#262626;
+        background-color: #FFFFFF;
         font-size: 14px;
         line-height: 1.8;
   }
@@ -74,6 +74,9 @@
 .mr-12 {
 	margin-right: 12px;
 }
+.mr-14 {
+	margin-right: 14px;
+}
 .mr-16 {
 	margin-right: 16px;
 }
@@ -99,8 +102,14 @@
 .mb-4 {
 	margin-bottom: 4px;
 }
+.mb-6 {
+	margin-bottom: 6px;
+}
 .mb-8 {
 	margin-bottom: 8px;
+}
+.mb-10 {
+	margin-bottom: 10px;
 }
 .mb-12 {
 	margin-bottom: 12px;

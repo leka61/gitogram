@@ -5,19 +5,18 @@
               <div class="c-menu mb-45">
                 <header-menu></header-menu>
               </div>
-                <!-- <div class="icon">
-                    <icon name="home"/>
-                </div> -->
             </template>
-            <template #stories>
+            <template #content>
                 <ul class="stories">
                     <li v-for="story in stories" :key="story.id" class="stories-item">
                         <story-user-item :avatar="story.avatar" :username="story.username" @onPress="handlePress(story.id)"/>
                     </li>
                 </ul>
             </template>
-            <template #content>
-                <div class="posts-container">
+        </topline>
+        <baseline>
+          <template #posts>
+                <div class="posts-container mt-8">
                       <ul class="posts__list">
                           <li v-for="item in posts" :key="item.id" class="posts__item">
                               <post :avatar-url="item.avatar" :username="item.username">
@@ -28,26 +27,14 @@
                           </li>
                       </ul>
                 </div>
-                <!-- <div class="c-feed">
-                    <toggler @onToggle="toggle"/>
-                    <div class="comments" v-if="shown">
-                        <ul class="comments-list">
-                            <li class="comments-item" v-for="n in 5" :key="n">
-                                <comment text="Some text" username="User 1"/>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
             </template>
-        </topline>
+        </baseline>
     </div>
 </template>
 <script>
 import { topline } from '../../components/topline'
-// import { icon } from '../../icons'
+import { baseline } from '../../components/baseline'
 import { storyUserItem } from '../../components/storyUserItem'
-// import { toggler } from '../../components/toggler'
-// import { comment } from '../../components/comment'
 import { post } from '../../components/post'
 import { card } from '../../components/card'
 import { headerMenu } from '../../components/headerMenu'
@@ -57,13 +44,11 @@ export default {
   name: 'feeds',
   components: {
     topline,
-    // icon,
     storyUserItem,
-    // toggler,
-    // comment,
     post,
     card,
-    headerMenu
+    headerMenu,
+    baseline
   },
   data() {
     return {

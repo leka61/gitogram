@@ -1,8 +1,5 @@
 <template>
   <div class="menu">
-      <!-- <div class="menu__title">
-          <h1>Gitogram / </h1>
-      </div> -->
       <logo/>
       <menu-icons/>
   </div>

@@ -40,6 +40,7 @@ import { post } from '../../components/post'
 import { card } from '../../components/card'
 import { headerMenu } from '../../components/headerMenu'
 import stories from './data.json'
+import * as api from '../../api'
 
 export default {
   name: 'feeds',
@@ -64,8 +65,9 @@ export default {
     }
   },
   created() {
-    console.log(stories)
+    /// console.log(stories)
     this.posts = stories
+    api.trendings.getTrendings()
   }
 }
 </script>

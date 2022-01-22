@@ -31,6 +31,7 @@
         </baseline>
     </div>
 </template>
+
 <script>
 import { topline } from '../../components/topline'
 import { baseline } from '../../components/baseline'

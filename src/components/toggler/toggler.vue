@@ -13,13 +13,13 @@ export default {
   components: {
     icon
   },
-  data () {
+  data() {
     return {
       isOpened: false
     }
   },
   methods: {
-    toggle () {
+    toggle() {
       this.isOpened = !this.isOpened
       this.$emit('onToggle', this.isOpened)
     }

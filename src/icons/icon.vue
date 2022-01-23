@@ -10,7 +10,7 @@ export default {
     name: {
       type: String,
       required: true,
-      validator (value) {
+      validator(value) {
         return Object.keys(icons).includes(value)
       }
     }

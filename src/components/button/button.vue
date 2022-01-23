@@ -7,7 +7,8 @@
       :data-hover-text="hoverText"
     >
       <span class='btn-text'>
-        <slot></slot>  
+        <!-- <slot></slot>   -->
+        {{btnText}}
       </span>
     </button>
 </template>
@@ -18,6 +19,9 @@ export default {
     props: {
         hoverText:{
             type: String
+        },
+        btnText:{
+            type: String
         }
     },
     computed: {
@@ -27,3 +31,4 @@ export default {
     }
 }
 </script>
+<style src="./button.scss" lang="scss"></style>

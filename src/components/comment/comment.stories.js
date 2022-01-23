@@ -2,16 +2,35 @@ import comment from "./comment.vue"
 
 export default {
     title: "comment",
-    components : { comment }
+    components : { comment },
+    argTypes:{
+        username:{
+            type:'text'
+        },
+        text:{
+            type:'text'
+        }
+    }
 }
 
-export const defaultView = ()=>({
+export const defaultView = (args)=>({
+    props:Object.keys(args),
     components:{
         comment
     },
+    data(){
+        return {
+            args
+        }  
+    },
     template:`<comment
-    username="User Name"
-    text="Comment text"
+    :username="args.username"
+    :text="args.text"
     />`
 })
+
+defaultView.args = {
+    username: 'User Name',
+    text: 'user comment'
+}
 

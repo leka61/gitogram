@@ -8,17 +8,20 @@
     overflow: hidden;
     border-radius: 50%;
 }
-.avatar{
-    width: 92px;
-    height: 92px;
+.avatar_story{
+    width: 100px;
+    height: 100px;
     border: 2px solid #A6328D;
     box-sizing: border-box;
     border-radius: 50%;
     overflow: hidden;
     margin-bottom: 10px;
-    padding:4px;
+    // padding:4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.avatar:hover{
+.avatar_story:hover{
     border-color: transparent;
     cursor: pointer;
 }

@@ -8,4 +8,5 @@ export const parameters = {
   },
 }
 
-import "./main.pcss"
+import "../src/global.scss"
+import "../src/pages/feeds/feeds.scss"

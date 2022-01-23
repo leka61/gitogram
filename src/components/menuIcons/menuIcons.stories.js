@@ -1,9 +1,15 @@
-import avatar from "./avatar.vue"
+import menuIcons from "./menuIcons.vue"
+import avatar from "../../components/avatar/avatar.vue"
+import icon from "../../icons"
 
 export default {
-    title: "avatar",
-    components : { avatar },
+    title: "menuIcons",
+    components : { menuIcons },
+    subcomponents: { avatar, icon },
     argTypes:{
+        avatar:{
+            type:'text'
+        },
         size:{
             control:{
                 type:'select'
@@ -16,21 +22,17 @@ export default {
 export const defaultView = (args)=>({
     props:Object.keys(args),
     components:{
-        avatar
+        avatar, icon, menuIcons
     },
     data(){
       return {
           args
       }  
     },
-    template:`<avatar 
-    :size="args.size"
-    :avatar="args.avatar"
-    />`
+    template:`<menuIcons :src="args.avatar"/>`
 })
 
 defaultView.args = {
     avatar:'https://picsum.photos/200/300',
-    size: 'l'
+    size: 'xs'
 }
-

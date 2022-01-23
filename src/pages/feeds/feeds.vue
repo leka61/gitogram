@@ -8,8 +8,8 @@
             </template>
             <template #content>
                 <ul class="stories">
-                    <li v-for="story in stories" :key="story.id" class="stories-item">
-                        <story-user-item :avatar="story.avatar" :username="story.username" @onPress="handlePress(story.id)"/>
+                    <li v-for="story in items" :key="story.id" class="stories-item">
+                        <story-user-item :avatar="story.owner.avatar_url" :username="story.owner.login" @onPress="handlePress(story.id)"/>
                     </li>
                 </ul>
             </template>
@@ -18,10 +18,10 @@
           <template #posts>
                 <div class="posts-container mt-8">
                       <ul class="posts__list">
-                          <li v-for="item in posts" :key="item.id" class="posts__item">
-                              <post :avatar-url="item.avatar" :username="item.username">
+                          <li v-for="item in items" :key="item.id" class="posts__item">
+                              <post :avatar-url="item.owner.avatar_url" :username="item.owner.login">
                                 <template #card>
-                                  <card :title="item.title" />
+                                  <card :title="item.name" :text="item.description" :stars="item.stargazers_count" :forks="item.forks_count" />
                                 </template>
                               </post>
                           </li>
@@ -56,7 +56,8 @@ export default {
     return {
       stories,
       shown: false,
-      posts: []
+      posts: [],
+      items: []
     }
   },
   methods: {
@@ -64,10 +65,15 @@ export default {
       this.shown = isOpened
     }
   },
-  created() {
+  async created() {
+    try {
+      const { data } = await api.trendings.getTrendings()
+      this.items = data.items
+    } catch (error) {
+      console.log(error)
+    }
     /// console.log(stories)
     this.posts = stories
-    api.trendings.getTrendings()
   }
 }
 </script>

@@ -18,7 +18,6 @@ export const getTrendings = (lang = 'javascript') => {
   params.append('per_page', 10)
   params.append('q', `language:${lang} created:>${formattedDate}`)
   return makeRequest({
-    url: `/search/repositories/?${params}`
-    // url: `https://api.github.com/search/repositories/?q=tetris+language:assembly&sort=stars&order=desc`
+    url: `/search/repositories?${params}`
   })
 }

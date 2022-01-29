@@ -4,6 +4,12 @@
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+
+    &.active{
+        .indicator{
+            width: 100%;
+        }
+    }
 }
 .indicator{
     position: absolute;
@@ -12,9 +18,9 @@
     left: 0;
     width: 0px;
     background: var(--green);
-    transition: 150s;
+    transition: 5s;
 }
-.c-progress.active .indicator{
-    width: 100%;
-}
+// .c-progress.active .indicator{
+//     width: 100%;
+// }
 

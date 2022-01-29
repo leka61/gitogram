@@ -8,7 +8,13 @@
 export default {
   data() {
     return {
-      active: false
+      // tactive: false
+    }
+  },
+  props: {
+    active: {
+      type: String,
+      default: ""
     }
   },
   emits: ['onFinish'],
@@ -18,10 +24,12 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(() => {
-      console.log(this.active);
-      this.active = true
+    setTimeout(() => {
+      // this.active = true
     })
+    // this.$nextTick(() => {
+    //   this.active = true
+    // })
     this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
   },
   beforeUnmount() {

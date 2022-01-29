@@ -72,8 +72,9 @@ export default {
     } catch (error) {
       console.log(error)
     }
-    /// console.log(stories)
+
     this.posts = stories
+    console.log(this.$store.state.foo)
   }
 }
 </script>

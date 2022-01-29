@@ -16,7 +16,8 @@
     "axios": "^0.25.0",
     "core-js": "^3.6.5",
     "sass": "^1.49.0",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.16.10",

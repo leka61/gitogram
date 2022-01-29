@@ -15,20 +15,20 @@
 
 <script>
 export default {
-    name: 'Button',
-    props: {
-        hoverText:{
-            type: String
-        },
-        btnText:{
-            type: String
-        }
+  name: 'Button',
+  props: {
+    hoverText:{
+      type: String
     },
-    computed: {
-        withHoverText (){
-            return this.hoverText?.length
-        }
+    btnText:{
+      type: String
     }
+  },
+  computed: {
+    withHoverText (){
+      return this.hoverText?.length
+    }
+  }
 }
 </script>
 <style src="./button.scss" lang="scss"></style>

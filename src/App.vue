@@ -1,16 +1,19 @@
 <template>
-  <feeds/>
+  <stories/>
+  <!-- <feeds/> -->
   <!-- <posts/> -->
 </template>
 
 <script>
-import { feeds } from './pages/feeds/'
+// import { feeds } from './pages/feeds/'
+import { stories } from './pages/stories/'
 /// import { posts } from './pages/posts/'
 
 export default {
   name: 'App',
   components: {
-    feeds
+    // feeds
+    stories
     /// posts
   }
 }

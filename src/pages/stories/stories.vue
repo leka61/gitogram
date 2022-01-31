@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-      <header class="header">
+      <header class="header mt-48 mb-120">
           <div class="x-container">
               <button class="logo">
                 <logo white/>
@@ -11,7 +11,7 @@
           </div>
       </header>
       <div class="content">
-          <stories-slider/>
+          <stories-slider :initialSlide = "Number($route.params.initialSlide)"/>
       </div>
   </div>
 </template>

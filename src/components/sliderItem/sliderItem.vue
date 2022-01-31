@@ -3,7 +3,7 @@
     <div class="slider">
         <div class="slider_header mb-18">
           <div class="slider_progress ml-8 mt-8 mb-12">
-              <x-progress :active="active"/>
+              <x-progress :active="active" @OnFinish="$emit('onProgressFinish')"/>
           </div>
           <div class="slider_user ml-8 mb-12">
               <user :src="data.avatarUrl" :name="data.username"/>
@@ -24,12 +24,18 @@
             <x-button class="mb-32" :hoverText="hoverBtnText" :btnText="btnText"></x-button>
         </div>
         <template v-if="active">
-          <button v-if="btnsShown.includes('next')" class="btn btn-next">
+          <button
+            v-if="btnsShown.includes('next')"
+                  class="btn btn-next"
+                  @click="$emit('onNextSlide')">
           <span class="icon">
             <icon name="arrow"/>
           </span>
           </button>
-          <button v-if="btnsShown.includes('prev')" class="btn btn-prev">
+          <button
+          v-if="btnsShown.includes('prev')"
+                  class="btn btn-prev"
+                  @click="$emit('onPrevSlide')">
             <span class="icon">
               <icon name="arrow"/>
             </span>
@@ -56,6 +62,7 @@ export default {
     spinner,
     icon
   },
+  emits: ["onPrevSlide", "onNextSlide", "onProgressFinish"],
   props: {
     avatarUrl: {
       type: String,

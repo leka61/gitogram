@@ -17,15 +17,15 @@
 export default {
   name: 'Button',
   props: {
-    hoverText:{
+    hoverText: {
       type: String
     },
-    btnText:{
+    btnText: {
       type: String
     }
   },
   computed: {
-    withHoverText (){
+    withHoverText() {
       return this.hoverText?.length
     }
   }

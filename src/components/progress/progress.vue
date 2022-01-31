@@ -17,10 +17,10 @@ export default {
       default: ""
     }
   },
-  emits: ['onFinish'],
+  emits: ['onProgressFinish'],
   methods: {
-    emitOnFinish() {
-      this.$emit('onFinish')
+    OnFinish() {
+      this.$emit('onProgressFinish')
     }
   },
   mounted() {
@@ -30,10 +30,10 @@ export default {
     // this.$nextTick(() => {
     //   this.active = true
     // })
-    this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
+    this.$refs.indicator.addEventListener('transitionend', this.OnFinish)
   },
   beforeUnmount() {
-    this.$refs.indicator.removeEventListener('transitionend', this.emitOnFinish)
+    this.$refs.indicator.removeEventListener('transitionend', this.OnFinish)
   }
 }
 </script>

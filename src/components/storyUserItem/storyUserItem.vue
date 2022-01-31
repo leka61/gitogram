@@ -1,10 +1,10 @@
 <template>
-    <button class="c-story-user-item" @click="$emit('onPress')"></button>
-    <div class="avatar_story">
-      <avatar :avatar="avatar" :size="size"/>
-        <!-- <img :src="avatar" class="img" alt="username avatar"/> -->
-    </div>
-    <div class="username">{{username}}</div>
+    <button class="c-story-user-item"></button>
+      <div class="avatar_story" @click="$emit('onPress')">
+        <avatar :avatar="avatar" :size="size"/>
+          <!-- <img :src="avatar" class="img" alt="username avatar"/> -->
+      </div>
+      <div class="username">{{username}}</div>
 </template>
 
 <script>
@@ -13,6 +13,7 @@ export default {
   components: {
     avatar
   },
+  emits: ['onPress'],
   props: {
     avatar: {
       type: String,

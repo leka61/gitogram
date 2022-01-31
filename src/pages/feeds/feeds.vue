@@ -9,7 +9,10 @@
             <template #content>
                 <ul class="stories">
                     <li v-for="story in items" :key="story.id" class="stories-item">
-                        <story-user-item :avatar="story.owner.avatar_url" :username="story.owner.login" @onPress="handlePress(story.id)"/>
+                        <story-user-item
+                          :avatar="story.owner.avatar_url"
+                          :username="story.owner.login"
+                          @onPress="$router.push({ name: 'Stories', params: { initialSlide: story.id } })"/>
                     </li>
                 </ul>
             </template>
@@ -52,6 +55,7 @@ export default {
     headerMenu,
     baseline
   },
+  emits: ['onPress'],
   data() {
     return {
       stories,
@@ -63,6 +67,9 @@ export default {
   methods: {
     toggle(isOpened) {
       this.shown = isOpened
+    },
+    storyPress(p) {
+      console.log(p);
     }
   },
   async created() {
@@ -74,7 +81,6 @@ export default {
     }
 
     this.posts = stories
-    console.log(this.$store.state.foo)
   }
 }
 </script>

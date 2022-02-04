@@ -3,7 +3,7 @@
     <div class="slider">
         <div class="slider_header mb-18">
           <div class="slider_progress ml-8 mt-8 mb-12">
-              <x-progress :active="active" @OnFinish="$emit('onProgressFinish')"/>
+              <x-progress :active="active" @onFinish="$emit('onProgressFinish')"/>
           </div>
           <div class="slider_user ml-8 mb-12">
               <user :src="data.avatarUrl" :name="data.username"/>

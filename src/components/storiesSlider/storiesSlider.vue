@@ -76,7 +76,6 @@ export default {
     moveSlider(slideNdx) {
       const { slider } = this.$refs;
       const item = this.$refs.item[slideNdx];
-      console.log(slideNdx);
       const slideWidth = parseInt(getComputedStyle(item).getPropertyValue("width"), 10);
       this.slideNdx = slideNdx;
       this.sliderPosition = -(slideWidth * slideNdx);

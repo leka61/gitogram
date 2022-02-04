@@ -6,7 +6,9 @@
                 <logo white/>
               </button>
               <button class="close-btn">
-                  <icon name="close"/>
+                  <router-link to="/">
+                    <icon name="close"/>
+                  </router-link>
               </button>
           </div>
       </header>

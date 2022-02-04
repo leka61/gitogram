@@ -17,23 +17,24 @@ export default {
       default: ""
     }
   },
-  emits: ['onProgressFinish'],
+  emits: ['onFinish'],
   methods: {
-    OnFinish() {
-      this.$emit('onProgressFinish')
+    emitOnFinish() {
+      this.$emit('onFinish')
+      console.log('emit');
     }
   },
   mounted() {
     setTimeout(() => {
       // this.active = true
-    })
+      this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
+    }, 1000)
     // this.$nextTick(() => {
     //   this.active = true
     // })
-    this.$refs.indicator.addEventListener('transitionend', this.OnFinish)
   },
   beforeUnmount() {
-    this.$refs.indicator.removeEventListener('transitionend', this.OnFinish)
+    this.$refs.indicator.removeEventListener('transitionend', this.emitOnFinish)
   }
 }
 </script>

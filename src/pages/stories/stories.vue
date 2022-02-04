@@ -30,4 +30,4 @@ export default {
 }
 </script>
 
-<style src="./stories.scss" lang="scss"></style>
+<style src="./stories.scss" lang="scss" scoped></style>

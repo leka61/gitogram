@@ -85,4 +85,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped src="./feeds.scss"></style>
+<style lang="scss" src="./feeds.scss" scoped></style>

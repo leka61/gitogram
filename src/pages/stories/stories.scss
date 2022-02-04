@@ -1,13 +1,16 @@
-// .wrapper{
-//     background-color: #101010;
+.wrapper{
+    background-color: #101010;
+}
+.x-container {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+// .logo svg, .logo svg>path{
+//     fill:#FFFFFF;
 // }
-// .x-container {
-//     width: 1200px;
-//     margin: 0 auto;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-// }
-// .logo{
-//     color:#FFFFFF;
-// }
+.logo{
+    color: #ffffff;
+}

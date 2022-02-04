@@ -36,21 +36,34 @@
 }
 .btn-next{
     transform: rotate(-180deg);
-    left: 383px;
+    left: 100%;
+    // left: 383px;
 }
 .btn-next:hover, .btn-prev:hover {
     color: #31AE54;
     cursor: pointer;
 }
+.btn-prev {
+    right:100%;
+}
 
 .icon {
     width: 20px;
+}
+.slider_content {
+    overflow-y: scroll;
+    height: 285px;
 }
 .slider-item{
     &.active{
         .slider{
         width: 375px;
         height: 600px;
+        position: relative;
+        }
+        .slider_content {
+            overflow-y: scroll;
+            height: 405px;
         }
     }
 }

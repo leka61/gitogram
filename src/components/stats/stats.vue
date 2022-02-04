@@ -29,11 +29,11 @@ export default {
   },
   props: {
     stars: {
-      type: Number,
+      type: String,
       required: true
     },
     forks: {
-      type: Number,
+      type: String,
       required: true
     }
   },

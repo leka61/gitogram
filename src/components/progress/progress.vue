@@ -21,14 +21,13 @@ export default {
   methods: {
     emitOnFinish() {
       this.$emit('onFinish')
-      console.log('emit');
     }
   },
   mounted() {
     setTimeout(() => {
       // this.active = true
       this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
-    }, 1000)
+    }, 7000)
     // this.$nextTick(() => {
     //   this.active = true
     // })

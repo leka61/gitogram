@@ -21,7 +21,13 @@
           </div>
         </div>
         <div class="slider_footer">
-            <x-button class="mb-32" :hoverText="hoverBtnText" :btnText="btnText"></x-button>
+            <x-button
+            class="mb-32"
+            @click="$emit(data.following.status ? 'onUnFollow' :'onFollow', data.id)"
+            :loading = "data.following.loading"
+            :theme="data.following.status ? 'grey' : 'green'"
+            :hoverText="data.following.status ? 'Follow' : 'Unfollow'"
+            :btnText="data.following.status ? 'Unfollow' : 'Follow'">{{data.following.status ? 'Unfollow' : 'Follow'}}</x-button>
         </div>
         <template v-if="active">
           <button
@@ -62,7 +68,7 @@ export default {
     spinner,
     icon
   },
-  emits: ["onPrevSlide", "onNextSlide", "onProgressFinish"],
+  emits: ["onPrevSlide", "onNextSlide", "onProgressFinish", "onFollow", "onUnFollow"],
   props: {
     avatarUrl: {
       type: String,

@@ -2,11 +2,23 @@
 import about from '../pages/about'
 import feeds from '../pages/feeds/feeds'
 import stories from '../pages/stories/stories'
+import start from '../pages/start/start'
+import auth from '../pages/auth/auth'
 export default [
   {
     component: feeds,
+    path: '/feeds',
+    name: 'feeds'
+  },
+  {
+    component: start,
+    path: '/start',
+    name: 'start'
+  },
+  {
+    component: auth,
     path: '/',
-    name: 'Main'
+    name: 'auth'
   },
   {
     component: about,

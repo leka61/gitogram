@@ -7,17 +7,21 @@
       <slot name="card"/>
     </div>
     <div class="c-feed">
-      <toggler class="mb-10" @onToggle="toggle"/>
+      <toggler class="mb-10" @click="$emit('loadContent')" @onToggle="toggle"/>
       <div class="comments" v-if="shown">
         <ul class="post__comment comment__list">
-          <li class="comment__item mb-6" v-for="item in 5" :key="item">
-            <comment text="Some text" username="User 1"/>
+          <li
+          class="comment__item mb-6"
+          v-for="{id,
+                  user,
+                  title} in issues" :key="id">
+            <comment :text="title" :username="user.login"/>
           </li>
         </ul>
       </div>
     </div>
     <div class="c-date">
-      <span>15 MAY</span>
+      <span>{{date}}</span>
     </div>
   </div>
 </template>
@@ -32,6 +36,7 @@ export default {
     toggler,
     comment
   },
+  emits: ['loadContent'],
   props: {
     avatarUrl: {
       type: String,
@@ -40,6 +45,14 @@ export default {
     username: {
       type: String,
       default: "User Loft"
+    },
+    date: {
+      type: String,
+      default: "15 MAY"
+    },
+    issues: {
+      type: Array,
+      default: () => ([])
     }
   },
   data() {

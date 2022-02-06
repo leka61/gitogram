@@ -1,0 +1,21 @@
+.auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.auth_button{
+    background-image: url(./auth.svg);
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    background-position-x: 92%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: initial;
+}
+.auth_text{
+    color: #6F6F6F;
+    font-size: 16px;
+    width: 220px;
+}

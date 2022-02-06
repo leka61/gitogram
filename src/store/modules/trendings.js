@@ -48,7 +48,6 @@ export default ({
       try {
         const data = await trendings.getTrendings()
         commit('SET_TRENDINGS', data.data.items)
-        console.log(data.data.items)
       } catch (error) {
         console.log(error)
       }

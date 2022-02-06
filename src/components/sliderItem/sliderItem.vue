@@ -112,4 +112,4 @@ export default {
 }
 </script>
 
-<style src="./sliderItem.scss" lang="scss"></style>
+<style src="./sliderItem.scss" scoped lang="scss"></style>

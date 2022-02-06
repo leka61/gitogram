@@ -3,9 +3,15 @@
         <div class="icon">
             <icon name="home"/>
         </div>
-        <avatar class="user__avatar" :avatar="src" :size="size"/>
+        <avatar
+        class="user__avatar"
+        :avatar="src"
+        :size="size"
+        @click="$router.push({ name: 'user' })"/>
         <div class="icon">
-            <icon name="exit"/>
+            <icon
+            name="exit"
+            @click="logout"/>
         </div>
     </div>
 </template>
@@ -13,10 +19,16 @@
 <script>
 import { avatar } from '../../components/avatar'
 import { icon } from '../../icons'
+import { mapActions } from 'vuex'
 export default {
   components: {
     icon,
     avatar
+  },
+  methods: {
+    ...mapActions({
+      logout: "auth/logout"
+    })
   },
   props: {
     src: {
@@ -26,6 +38,9 @@ export default {
     size: {
       type: String,
       default: "xs"
+    },
+    user: {
+      type: Object
     }
   }
 };

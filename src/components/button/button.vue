@@ -7,7 +7,6 @@
       :data-hover-text="hoverText"
     >
       <span class='btn-text'>
-        <!-- <slot></slot>   -->
         {{btnText}}
       </span>
     </button>

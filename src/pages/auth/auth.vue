@@ -1,17 +1,31 @@
 <template>
-  <button @click="getCode">getcode</button>
+  <div class="auth mt-200">
+    <logo class="auth_logo mb-12"/>
+    <div class="auth_text mb-36">
+      More than just one repository.
+      This is our digital world.
+    </div>
+    <x-button class="auth_button" @click="getCode" :btnText="'Authorize with github'">
+    </x-button>
+  </div>
 </template>
 
 <script>
 import env from '../../env.js'
+import { button } from '../../components/button'
+import { logo } from '../../components/logo'
 
 export default {
+  components: {
+    xButton: button,
+    logo
+  },
   methods: {
     getCode() {
       const githubAuthApi = "https://github.com/login/oauth/authorize"
       const params = new URLSearchParams();
       params.append('client_id', env.clientId);
-      params.append('scope', 'repo:status read:user')
+      params.append('scope', 'repo admin:repo_hook')
       // params.append('client_secret', clientSecret)
       window.location.href = `${githubAuthApi}?${params}`
     }
@@ -40,7 +54,4 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
+<style lang="scss" src="./auth.scss" scoped></style>

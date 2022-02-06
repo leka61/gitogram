@@ -4,6 +4,7 @@ import feeds from '../pages/feeds/feeds'
 import stories from '../pages/stories/stories'
 import start from '../pages/start/start'
 import auth from '../pages/auth/auth'
+import user from '../pages/user/user'
 export default [
   {
     component: feeds,
@@ -19,6 +20,11 @@ export default [
     component: auth,
     path: '/',
     name: 'auth'
+  },
+  {
+    component: user,
+    path: '/user',
+    name: 'user'
   },
   {
     component: about,

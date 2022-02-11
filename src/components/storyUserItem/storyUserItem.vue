@@ -1,10 +1,12 @@
 <template>
-    <button class="c-story-user-item"></button>
+  <div>
+      <button class="c-story-user-item"></button>
       <div class="avatar_story" @click="$emit('onPress')">
         <avatar :avatar="avatar" :size="size"/>
           <!-- <img :src="avatar" class="img" alt="username avatar"/> -->
       </div>
       <div class="username">{{username}}</div>
+  </div>
 </template>
 
 <script>

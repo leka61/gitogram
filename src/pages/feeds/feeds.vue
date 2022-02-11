@@ -95,7 +95,7 @@ export default {
       this.shown = isOpened
     },
     storyPress(p) {
-      console.log(p);
+      // console.log(p);
     }
   },
   emits: ['onPress', 'loadContent'],

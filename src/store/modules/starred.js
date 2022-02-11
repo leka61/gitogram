@@ -21,9 +21,11 @@ export default ({
     SET_ISSUES(state, payload) {
       state.data = state.data.map(repo => {
         if (payload.id === repo.id) {
-          repo.issues = payload.content
+          repo.issues = {
+            data: payload.content,
+            loading: true
+          }
         }
-        console.log(repo);
         return repo;
       })
     }

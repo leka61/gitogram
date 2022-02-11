@@ -7,8 +7,8 @@
       <slot name="card"/>
     </div>
     <div class="c-feed">
-      <toggler class="mb-10" @click="$emit('loadContent')" @onToggle="toggle"/>
-      <div class="comments" v-if="shown">
+      <toggler class="mb-10" @toggle="handleToggle"/>
+      <div class="comments" v-if="issues?.length && opened">
         <ul class="post__comment comment__list">
           <li
           class="comment__item mb-6"
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 import { user } from '../../components/user'
 import { toggler } from '../../components/toggler'
 import { comment } from '../../components/comment'
@@ -38,6 +39,9 @@ export default {
   },
   emits: ['loadContent'],
   props: {
+    loading: {
+      type: Boolean
+    },
     avatarUrl: {
       type: String,
       default: "https://picsum.photos/300/300"
@@ -60,11 +64,25 @@ export default {
       shown: false
     }
   },
-  methods: {
-    toggle(isOpened) {
-      this.shown = isOpened
+  setup(props, { emit }) {
+    console.log(props.issues)
+    const opened = ref(false)
+    const handleToggle = (isOpened) => {
+      opened.value = isOpened;
+      if (isOpened && props.issues.length === 0) {
+        emit("loadContent")
+      }
+    }
+    return {
+      opened,
+      handleToggle
     }
   }
+  // methods: {
+  //   toggle(isOpened) {
+  //     this.shown = isOpened
+  //   }
+  // }
 }
 </script>
 

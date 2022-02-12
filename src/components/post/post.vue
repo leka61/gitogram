@@ -7,7 +7,12 @@
       <slot name="card"/>
     </div>
     <div class="c-feed">
-      <toggler class="mb-10" @toggle="handleToggle"/>
+      <div class="toggler">
+        <toggler class="mb-10" @toggle="handleToggle"/>
+      </div>
+      <div class="content-loader" v-if="loading">
+        <content-loader/>
+      </div>
       <div class="comments" v-if="issues?.length && opened">
         <ul class="post__comment comment__list">
           <li
@@ -31,11 +36,13 @@ import { ref } from 'vue'
 import { user } from '../../components/user'
 import { toggler } from '../../components/toggler'
 import { comment } from '../../components/comment'
+import { contentLoader } from '../../components/contentLoader'
 export default {
   components: {
     user,
     toggler,
-    comment
+    comment,
+    contentLoader
   },
   emits: ['loadContent'],
   props: {

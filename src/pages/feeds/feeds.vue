@@ -119,7 +119,7 @@ export default {
   // },
   async mounted() {
     await this.fetchTrendings()
-    await this.fetchStarred()
+    await this.fetchStarred({ limit: 3 })
   }
 }
 </script>

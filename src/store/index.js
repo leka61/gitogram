@@ -3,6 +3,8 @@ import trendings from './modules/trendings'
 import starred from './modules/starred'
 import user from './modules/user'
 import auth from './modules/auth'
+import repos from './modules/repos'
+import following from './modules/following'
 // import readme from './modules/readme'
 
 export default createStore({
@@ -19,6 +21,8 @@ export default createStore({
     trendings,
     starred,
     user,
-    auth
+    auth,
+    repos,
+    following
   }
 })

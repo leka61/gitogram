@@ -19,10 +19,10 @@
                 <div class="user_page__info">
                     <div class="user_page__login">{{userData.login}}</div>
                     <div class="user_page__counts">
-                        <div class="user_page__repos">
+                        <div class="user_page__repos" @click="changeFollowing">
                             <span class="user_page__number">{{userRepos.length}}</span> repositories
                         </div>
-                        <div class="user_page__followings">
+                        <div class="user_page__followings" @click="changeFollowing">
                             <span class="user_page__number">{{userFollowing.length}}</span> followings
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="user_page__right_block">
+        <div class="user_page__right_block" v-if="!showFollowing">
             <div class="user_page__top">
              <div class="user_page__title">Repositories</div>
              <div class="user_page__count">{{userRepos.length}}</div>
@@ -50,7 +50,7 @@
                       </ul>
                 </div>
         </div>
-        <div class="user_page__right_block">
+        <div class="user_page__right_block" v-if="showFollowing">
             <div class="user_page__top">
                 <div class="user_page__title">Followings</div>
                 <div class="user_page__count">{{userFollowing.length}}</div>
@@ -103,6 +103,11 @@ export default {
       default: "m"
     }
   },
+  data() {
+    return {
+      showFollowing: false
+    }
+  },
   setup() {
     const { dispatch, state } = useStore()
     onMounted(() => {
@@ -119,6 +124,11 @@ export default {
       userData: computed(() => state.user.data),
       userFollowing: computed(() => state.following.data),
       userRepos: computed(() => state.repos.data)
+    }
+  },
+  methods: {
+    changeFollowing() {
+      this.showFollowing = !this.showFollowing
     }
   }
 //   props: {

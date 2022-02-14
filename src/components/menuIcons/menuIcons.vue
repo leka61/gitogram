@@ -1,7 +1,7 @@
 <template>
     <div class="menu__icons">
         <div class="icon">
-            <icon name="home"/>
+            <icon @click="$router.push({ name: 'feeds' })" name="home"/>
         </div>
         <avatar
         class="user__avatar"

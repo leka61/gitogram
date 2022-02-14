@@ -1,0 +1,105 @@
+.user_page__content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.user_page__left_block{
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #D3D3D3;
+    width: 500px;
+    align-items: center;
+}
+.user_page__right_block{
+    display: none;
+}
+.user_page__right_block.active{
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+}
+.user_page__profile{
+    display: flex;
+    flex-direction: row;
+}
+.user_page__info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.user_page__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.user_page__title {
+    display: flex;
+    justify-content: flex-start;
+}
+.user_page__counts {
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: -0.1px;
+    color: #404040;
+    align-items: center;
+}
+.user_page__number{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: #262626;
+}
+.user_page__counts_tab .user_page__number_text{
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: -0.1px;
+    text-decoration-line: underline;
+    color: #31AE54;
+}
+.user_page__counts_tab.active .user_page__number_text{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: -0.1px;
+    color: #404040;
+    text-decoration: none;
+}
+.user_page__number_text:hover{
+    cursor: pointer;
+}
+.user_page__name{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #9E9E9E;
+}
+.user_page__count{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: right;
+    color: #9E9E9E;
+}
+.posts__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.user_page__btn{
+    width: 110px;
+}

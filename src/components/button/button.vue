@@ -21,6 +21,9 @@ export default {
     },
     btnText: {
       type: String
+    },
+    theme: {
+      type: String
     }
   },
   computed: {

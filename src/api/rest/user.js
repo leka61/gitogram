@@ -8,3 +8,10 @@ export const getUserRepos = () => makeRequest({
 export const getUserFollowing = () => makeRequest({
   url: "/user/following"
 });
+export const unFollowUser = ({ username }) => makeRequest({
+  headers: {
+    accept: 'application/vnd.github.v3+json'
+  },
+  url: `/user/following/${username}`,
+  method: "delete"
+})

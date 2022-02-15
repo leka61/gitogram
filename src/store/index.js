@@ -5,12 +5,8 @@ import user from './modules/user'
 import auth from './modules/auth'
 import repos from './modules/repos'
 import following from './modules/following'
-// import readme from './modules/readme'
 
 export default createStore({
-  // state: {
-  //   foo: "bar"
-  // },
   getters: {
     getUnstarredOnly(state) {
       return state.trendings.data.filter((trendingsRepo) =>

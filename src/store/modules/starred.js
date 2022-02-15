@@ -29,17 +29,6 @@ export default ({
         return repo;
       })
     }
-    // SET_FOLLOWING: (state, payload) => {
-    //   state.data = state.data.map((repo) => {
-    //     if (payload.id === repo.id) {
-    //       repo.following = {
-    //         ...repo.following,
-    //         ...payload.data
-    //       }
-    //     }
-    //     return repo
-    //   })
-    // }
   },
   getters: {
     getRepoById: (state) => (id) => {
@@ -51,13 +40,11 @@ export default ({
       try {
         const data = await starred.getStarredRepos({ limit: limit })
         commit('SET_STARRED', data.data)
-        // console.log(data.data.items)
       } catch (error) {
         console.log(error)
       }
     },
     async fetchIssuesForRepo({ commit, getters }, { id, owner, repo }) {
-    //   const curRepo = getters.getRepoById(id);
       try {
         const { data } = await starred.getIssuesForRepo({ owner, repo });
         commit("SET_ISSUES", { id, content: data })

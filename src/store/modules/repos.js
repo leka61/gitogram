@@ -8,7 +8,6 @@ export default ({
   mutations: {
     SET_REPOS(state, payload) {
       state.data = payload
-      // state.data.repos = payload
     }
   },
   actions: {

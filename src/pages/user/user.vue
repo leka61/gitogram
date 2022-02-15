@@ -70,7 +70,6 @@
                               type
                             } in userFollowing" :key="id" class="posts__item mb-32">
                                   <user :src="avatar_url" :name="login" :type="type" :size="userSize"/>
-                                  <!-- @click="$emit(data.following.status ? 'onUnFollow' :'onFollow', data.id)" -->
                                   <x-button
                                   class="user_page__btn"
                                   :theme="'green'"
@@ -103,7 +102,6 @@ export default {
     user,
     xButton: button
   },
-  // emits: ["unFollowUser"],
   props: {
     size: {
       type: String,
@@ -117,7 +115,6 @@ export default {
   data() {
     return {
       activeItem: 'repositoriesTab'
-      // showFollowing: false
     }
   },
   setup() {
@@ -126,12 +123,6 @@ export default {
       dispatch("following/getUserFollowings")
       dispatch("repos/getUserRepos")
     })
-    // const currentInstance = getCurrentInstance()
-    // const userData = computed(() => {
-    //   console.log(currentInstance.proxy.$store.state);
-    //   return currentInstance.proxy.$store.state.user.data
-    // })
-    // console.log(currentInstance.proxy.$store.state.starred.data)
     return {
       userData: computed(() => state.user.data),
       userFollowing: computed(() => state.following.data),
@@ -146,39 +137,7 @@ export default {
     setActive(menuItem) {
       this.activeItem = menuItem
     }
-    // changeFollowing() {
-    //   this.showFollowing = !this.showFollowing
-    // }
   }
-//   props: {
-//     src: {
-//       type: String,
-//       default: "https://picsum.photos/200/300"
-//     },
-//     size: {
-//       type: String,
-//       default: "L"
-//     },
-//     user: {
-//       type: Object
-//     }
-//   },
-//   computed: {
-//     ...mapState({
-//       user: (state) => state.user.data
-//     }),
-//     ...mapGetters({
-//       hasUser: "user/hasUser"
-//     })
-//   },
-//   methods: {
-//     ...mapActions({
-//       getUser: "user/getUser"
-//     })
-//   },
-//   async created() {
-//     await this.getUser()
-//   }
 }
 </script>
 

@@ -8,10 +8,10 @@ export default ({
   mutations: {
     SET_FOLLOWINGS(state, payload) {
       state.data = payload
-      // state.data.repos = payload
     },
     DELETE_FOLLOWING: (state, payload) => {
-      delete state.data[payload.id]
+      const filteredArray = state.data.filter(item => item.id !== payload.id)
+      state.data = filteredArray
     }
   },
   actions: {

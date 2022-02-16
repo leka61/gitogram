@@ -7,7 +7,11 @@
       <slot name="card"/>
     </div>
     <div class="c-feed">
-      <div class="toggler">
+      <issues
+      :loading="loading"
+      :issues="issues"
+      @loadI="this.$emit('loadContent')"/>
+      <!-- <div class="toggler">
         <toggler class="mb-10" @toggle="handleToggle"/>
       </div>
       <div class="content-loader" v-if="loading">
@@ -23,7 +27,7 @@
             <comment :text="title" :username="user.login"/>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
     <div class="c-date">
       <span>{{date}}</span>
@@ -32,17 +36,19 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+// import { ref } from 'vue'
 import { user } from '../../components/user'
-import { toggler } from '../../components/toggler'
-import { comment } from '../../components/comment'
-import { contentLoader } from '../../components/contentLoader'
+import { issues } from '../../components/issues'
+// import { toggler } from '../../components/toggler'
+// import { comment } from '../../components/comment'
+// import { contentLoader } from '../../components/contentLoader'
 export default {
   components: {
     user,
-    toggler,
-    comment,
-    contentLoader
+    issues
+    // toggler,
+    // comment,
+    // contentLoader
   },
   emits: ['loadContent'],
   props: {
@@ -65,26 +71,26 @@ export default {
       type: Array,
       default: () => ([])
     }
-  },
-  data() {
-    return {
-      shown: false
-    }
-  },
-  setup(props, { emit }) {
-    console.log(props.issues)
-    const opened = ref(false)
-    const handleToggle = (isOpened) => {
-      opened.value = isOpened;
-      if (isOpened && props.issues.length === 0) {
-        emit("loadContent")
-      }
-    }
-    return {
-      opened,
-      handleToggle
-    }
   }
+  // data() {
+  //   return {
+  //     shown: false
+  //   }
+  // },
+  // setup(props, { emit }) {
+  //   console.log(props.issues)
+  //   const opened = ref(false)
+  //   const handleToggle = (isOpened) => {
+  //     opened.value = isOpened;
+  //     if (isOpened && props.issues.length === 0) {
+  //       emit("loadContent")
+  //     }
+  //   }
+  //   return {
+  //     opened,
+  //     handleToggle
+  //   }
+  // }
   // methods: {
   //   toggle(isOpened) {
   //     this.shown = isOpened

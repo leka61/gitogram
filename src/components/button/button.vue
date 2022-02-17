@@ -1,7 +1,7 @@
 <template>
     <button
       :class="[
-        'c-button',`theme-green`,
+        'c-button', theme, loading ? 'loading':'',
         {'hover-text': withHoverText}
       ]"
       :data-hover-text="hoverText"
@@ -23,6 +23,9 @@ export default {
       type: String
     },
     theme: {
+      type: String
+    },
+    loading: {
       type: String
     }
   },

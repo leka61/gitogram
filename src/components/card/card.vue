@@ -26,12 +26,12 @@ export default {
       default: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad totam undevoluptatem sunt fugiat labore amet perspiciatis! Dignissimos error reprehenderit officia repudiandae vero illum itaque ex eius maiores. Autem, fugit?"
     },
     stars: {
-      type: String,
-      default: "10"
+      type: Number,
+      default: 10
     },
     forks: {
-      type: String,
-      default: "5"
+      type: Number,
+      default: 5
     }
   }
 };

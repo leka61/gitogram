@@ -22,8 +22,10 @@ export default ({
       state.data = state.data.map(repo => {
         if (payload.id === repo.id) {
           repo.issues = {
-            data: payload.content,
-            loading: true
+            ...repo.issues,
+            ...payload.content
+            // data: payload.content,
+            // loading: payload.loading
           }
         }
         return repo;
@@ -46,11 +48,35 @@ export default ({
     },
     async fetchIssuesForRepo({ commit, getters }, { id, owner, repo }) {
       try {
+        commit("SET_ISSUES", {
+          id,
+          content: {
+            loading: true
+          }
+        })
         const { data } = await starred.getIssuesForRepo({ owner, repo });
-        commit("SET_ISSUES", { id, content: data })
+        commit("SET_ISSUES", {
+          id,
+          content: {
+            data: data
+          }
+        })
       } catch (err) {
         console.log(err);
+        commit("SET_ISSUES", {
+          id,
+          content: {
+            loading: false
+          }
+        })
         throw err
+      } finally {
+        commit("SET_ISSUES", {
+          id,
+          content: {
+            loading: false
+          }
+        })
       }
     }
   }

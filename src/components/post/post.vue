@@ -64,7 +64,7 @@ export default {
       default: "User Loft"
     },
     date: {
-      type: String,
+      type: Date,
       default: "15 MAY"
     },
     issues: {

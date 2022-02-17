@@ -21,4 +21,11 @@
       width: 14px;
       height: 14px;
     }
+    &__icon svg{
+      color: #586069;
+      &:hover {
+        color: #31AE54;
+        cursor: pointer;
+      }
+    }
   }
